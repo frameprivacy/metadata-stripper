@@ -1,0 +1,64 @@
+{
+  "name": "metadata-stripper",
+  "version": "0.1.0",
+  "description": "Read and remove privacy-sensitive metadata (GPS, camera, author, XMP, IPTC) from JPEG, PNG, WebP, TIFF, PDF and HEIC bytes, without re-encoding. Zero dependencies, browser or Node.",
+  "license": "MIT",
+  "author": "Frame <frameprivacy@proton.me>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frameprivacy/metadata-stripper.git"
+  },
+  "homepage": "https://github.com/frameprivacy/metadata-stripper#readme",
+  "bugs": "https://github.com/frameprivacy/metadata-stripper/issues",
+  "keywords": [
+    "exif",
+    "metadata",
+    "strip-exif",
+    "gps",
+    "privacy",
+    "jpeg",
+    "png",
+    "webp",
+    "tiff",
+    "pdf",
+    "heic",
+    "xmp"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.20.5",
+    "@vitest/coverage-v8": "^5.0.5",
+    "eslint": "^10.13.0",
+    "prettier": "^3.9.10",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.1",
+    "vitest": "^5.0.5"
+  }
+}
